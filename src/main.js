@@ -92,8 +92,17 @@ class Tcc2Instance extends InstanceBase {
 			this.log('debug', 'Ignored malformed SSC datagram')
 			return
 		}
+		if (update.protocolError) {
+			this.updateStatus(InstanceStatus.ConnectionFailure, 'SSC request rejected by device')
+			return
+		}
+		if (
+			!['azimuth', 'elevation', 'roomInUse', 'muted', 'product', 'firmware', 'serial'].some(
+				(key) => Object.prototype.hasOwnProperty.call(update, key) && update[key] !== null,
+			)
+		)
+			return
 		this.lastMessageAt = Date.now()
-		if (update.subscriptionExpired) this.subscribe()
 
 		for (const key of ['azimuth', 'elevation', 'roomInUse', 'muted', 'product', 'firmware', 'serial']) {
 			if (Object.prototype.hasOwnProperty.call(update, key)) this.state[key] = update[key]

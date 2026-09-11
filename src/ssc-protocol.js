@@ -36,6 +36,10 @@ function parseSscMessage(raw) {
 		return null
 	}
 	if (!body || typeof body !== 'object' || Array.isArray(body)) return null
+	const error = record(body.osc).error
+	if (error !== undefined && error !== null && !(Array.isArray(error) && error.length === 0)) {
+		return { valid: false, protocolError: true, subscriptionExpired: false }
+	}
 
 	const beam = record(record(body.m).beam)
 	const audio = record(body.audio)
