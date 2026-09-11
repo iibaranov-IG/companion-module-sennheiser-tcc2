@@ -1,0 +1,29 @@
+{
+	"name": "companion-module-sennheiser-tcc2",
+	"version": "0.1.0",
+	"main": "src/main.js",
+	"scripts": {
+		"format": "prettier -w .",
+		"format:check": "prettier -c .",
+		"test": "node --test test/*.test.js",
+		"package": "companion-module-build"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/iibaranov-IG/companion-module-sennheiser-tcc2.git"
+	},
+	"engines": {
+		"node": "^22.20",
+		"yarn": "^4"
+	},
+	"dependencies": {
+		"@companion-module/base": "~2.0.4"
+	},
+	"devDependencies": {
+		"@companion-module/tools": "^3.1.0",
+		"prettier": "^3.8.3"
+	},
+	"prettier": "@companion-module/tools/.prettierrc.json",
+	"packageManager": "yarn@4.17.0"
+}

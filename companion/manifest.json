@@ -1,0 +1,18 @@
+{
+	"$schema": "../node_modules/@companion-module/base/assets/manifest.schema.json",
+	"type": "connection",
+	"id": "sennheiser-tcc2",
+	"name": "Sennheiser TeamConnect Ceiling 2",
+	"shortname": "Sennheiser TCC2",
+	"description": "Active-talker beam tracking and mute control for the Sennheiser TeamConnect Ceiling 2",
+	"version": "0.1.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/iibaranov-IG/companion-module-sennheiser-tcc2.git",
+	"bugs": "https://github.com/iibaranov-IG/companion-module-sennheiser-tcc2/issues",
+	"maintainers": [{ "name": "Igor Baranov", "email": "iibaranov@gmail.com" }],
+	"runtime": { "type": "node22", "api": "nodejs-ipc", "apiVersion": "0.0.0", "entrypoint": "../src/main.js" },
+	"legacyIds": [],
+	"manufacturer": "Sennheiser",
+	"products": ["TeamConnect Ceiling 2", "TCC2"],
+	"keywords": ["audio", "microphone", "beamforming", "camera tracking", "ssc"]
+}
